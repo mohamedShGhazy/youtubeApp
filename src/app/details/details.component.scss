@@ -1,0 +1,74 @@
+.thumbnail {
+  width: 100%;
+  height: 540px; /* You must set a specified height */
+  background-position: center !important; /* Center the image */
+  background-repeat: no-repeat !important; /* Do not repeat the image */
+  background-size: cover !important;
+}
+.info {
+  h4 {
+    letter-spacing: 1px;
+    margin: 10px;
+    padding: 10px;
+  }
+  .Add {
+    background-color: #f00;
+    color: #fff;
+    margin: 10px 36px;
+  }
+}
+.rate {
+  display: flex;
+  span {
+    color: #696969;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+}
+.info,
+.statstics {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  color: #696969;
+}
+.statstics {
+  padding: 10px;
+  .view {
+    span {
+      margin: 0 10px;
+      padding: 2px;
+
+      display: inline-flex;
+    }
+  }
+}
+.descreption {
+  h4 {
+    color: #f00;
+    margin-left: 10px;
+    padding: 10px;
+  }
+  p {
+    margin: 20px;
+    padding: 5px;
+    line-height: 1.5;
+    line-break: auto;
+    font-size: 16px;
+    color: #696969;
+  }
+}
+.duration {
+  margin-top: 5px;
+}
+@media only screen and (max-width: 600px) {
+  .Add {
+    background-color: #f00;
+    color: #fff;
+    font-size: 14px !important;
+    width: 260px !important;
+    height: 50px !important;
+    margin: 0px !important;
+    margin-top: 13px !important;
+  }
+}

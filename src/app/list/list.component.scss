@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+  .video {
+    width: 100px;
+    padding: 5px;
+    margin-left: 45px;
+  }
+  th {
+    color: #242424;
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.viewDet,
+tr {
+  transition: 0.5s;
+}
+.viewDet:hover {
+  background-color: #f00;
+  color: #fff;
+}
+tr:hover {
+  background-color: #e5e5e5;
+}
+.paging {
+  width: 10%;
+  margin-left: auto;
+}
+@media only screen and (max-width: 600px) {
+  .paging {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
