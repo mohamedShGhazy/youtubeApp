@@ -41,7 +41,6 @@ export class ListComponent implements OnInit {
 
   getChannelId(maxResults) {
     this._service.getList(API(maxResults).getChannelVideos).subscribe((res) => {
-      console.log(res);
       this.videos = res.map((item) => {
         return {
           title: item.snippet.title,
@@ -55,7 +54,6 @@ export class ListComponent implements OnInit {
           thumbnail: item.snippet.thumbnails.high.url,
         };
       });
-      console.log("this.videos", this.videos);
       this.dataSource = new MatTableDataSource(this.videos);
     });
   }

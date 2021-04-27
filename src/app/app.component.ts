@@ -9,16 +9,18 @@ import { ServiceService } from "./service/service.service";
 })
 export class AppComponent {
   urlTree: UrlTree;
-  deisplay: any;
+  deisplay: any = true;
   constructor(private servce: ServiceService) {
-    this.servce.display.subscribe((res) => {
-      this.deisplay = res;
-      console.log(this.deisplay);
-    });
+    this.servce.displaySerachBox(true);
+    this.boxDisplay();
   }
 
   applyFilter(event) {
-    console.log((event.target as HTMLInputElement).value);
     this.servce.searchTitle(event.target.value);
+  }
+  boxDisplay() {
+    this.servce.display.subscribe((res) => {
+      this.deisplay = res;
+    });
   }
 }

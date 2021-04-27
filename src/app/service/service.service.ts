@@ -16,7 +16,6 @@ export class ServiceService {
   }
 
   searchTitle(data) {
-    console.log(data);
     this.value.next(data);
   }
   displaySerachBox(data) {

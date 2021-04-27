@@ -1,43 +1,44 @@
-<div
-  class="thumbnail"
-  [ngStyle]="{ background: 'url(' + video.thumbnail + ')' }"
-></div>
-<div class="info">
-  <h4>{{ video.title }}</h4>
-  <button mat-stroked-button class="Add" (click)="addToFaverit()">
-    {{
-      faveroitUser.id == id || favorit == true
-        ? "Added to favorites"
-        : "Add to to favorites"
-    }}
-  </button>
-</div>
-<div class="statstics">
-  <div class="rate">
-    <span>Rate Now</span>
-    <form #form="ngForm">
-      <bar-rating
-        [(rate)]="rate"
-        [max]="5"
-        name="rating"
-        [(ngModel)]="formRating"
-        (input)="getRate()"
-      ></bar-rating>
-    </form>
+<ng-container *ngIf="video">
+  <div
+    class="thumbnail"
+    [ngStyle]="{ background: 'url(' + video.thumbnail + ')' }"
+  ></div>
+  <div class="info">
+    <h4>{{ video.title }}</h4>
+    <button mat-stroked-button class="Add" (click)="addToFaverit()">
+      {{
+        faveroitUser.id == id || favorit == true
+          ? "Added to favorites"
+          : "Add to to favorites"
+      }}
+    </button>
   </div>
-  <div class="duration"><span>Duration</span> {{ video.duration }}</div>
-  <div class="view">
-    <span>
-      <mat-icon>visibility</mat-icon> <span>{{ video.view }}</span></span
-    >
-    <span>
-      <mat-icon>thumb_up</mat-icon> <span>{{ video.liked }}</span>
-    </span>
+  <div class="statstics">
+    <div class="rate">
+      <span>Rate Now</span>
+      <form #form="ngForm">
+        <bar-rating
+          [(rate)]="rate"
+          [max]="5"
+          name="rating"
+          [(ngModel)]="formRating"
+        ></bar-rating>
+      </form>
+    </div>
+    <div class="duration"><span>Duration</span> {{ video.duration }}</div>
+    <div class="view">
+      <span>
+        <mat-icon>visibility</mat-icon> <span>{{ video.view }}</span></span
+      >
+      <span>
+        <mat-icon>thumb_up</mat-icon> <span>{{ video.liked }}</span>
+      </span>
+    </div>
   </div>
-</div>
-<div class="descreption">
-  <h4>punlished on {{ video.publishedAt | date: "mediumDate" }}</h4>
-  <p>
-    {{ video.description }}
-  </p>
-</div>
+  <div class="descreption">
+    <h4>punlished on {{ video.publishedAt | date: "mediumDate" }}</h4>
+    <p>
+      {{ video.description }}
+    </p>
+  </div>
+</ng-container>
